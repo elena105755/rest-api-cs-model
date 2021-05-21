@@ -1,0 +1,12 @@
+*.log
+**.gitkeep**
+**package.json**
+client/out/*
+server/out/*
+load-balancer/out/*
+node_modules
+*.jar
+.vagrant
+.env
+server/src/node_modules/*
+load-balancer/src/node_modules/*

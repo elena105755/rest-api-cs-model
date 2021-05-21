@@ -1,0 +1,61 @@
+version: '3'
+
+networks:
+  scc311coursework:
+
+services:
+  server1:
+    container_name: server1
+    image: harbor.scc.lancs.ac.uk/$USERNAME/server:latest
+    restart: unless-stopped
+    depends_on: [redis]
+    hostname: server1:8080
+    environment: 
+      - REDIS_HOST=${REDIS_HOST}
+      - REDIS_PORT=${REDIS_PORT}
+    build:
+      context: server
+    networks:
+      - scc311coursework
+    ports:
+      - 8080:8080
+
+  server2:
+    container_name: server2
+    image: harbor.scc.lancs.ac.uk/$USERNAME/server:latest
+    restart: unless-stopped
+    depends_on: [redis]
+    hostname: server2:8080
+    environment: 
+      - REDIS_HOST=${REDIS_HOST}
+      - REDIS_PORT=${REDIS_PORT}
+    build:
+      context: server
+    networks:
+      - scc311coursework
+    ports:
+      - 8081:8080
+
+  load-balancer:
+    container_name: load-balancer
+    image: harbor.scc.lancs.ac.uk/$USERNAME/load-balancer:latest
+    restart: unless-stopped
+    depends_on: [redis, server1, server2]
+    environment: 
+      - REDIS_HOST=${REDIS_HOST}
+      - REDIS_PORT=${REDIS_PORT}
+    build:
+      context: load-balancer
+    networks:
+      - scc311coursework
+    ports:
+      - 9090:8080
+  
+  redis:
+    container_name: redis
+    image: redis:5.0.6
+    restart: unless-stopped
+    networks:
+      - scc311coursework
+    ports:
+      - 6379:6379

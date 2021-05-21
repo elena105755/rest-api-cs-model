@@ -1,0 +1,4 @@
+{"id ":"10", "status ":"available", "name ":"Alice in Wonderland by Lewis Caroll (Hardover)", "firstBid ":"0.99", "sellerId ":"20"}
+{"id ":"11", "status ":"available", "name ":"Pride and Prejudice by Jane Austin", "firstBid ":"0.22", "sellerId ":"21"}
+{"id ":"12", "status ":"not available", "name ":"Deux Citrons by Chateaux Anouille", "firstBid ":"0.89", "sellerId ":"22"}
+{"id ":"13", "status ":"not available", "name ":"", "firstBid ":"1.20", "sellerId ":"23"}
