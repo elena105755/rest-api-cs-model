@@ -1,4 +1,4 @@
-# SCC.311 Distributed Systems - Coursework
+# (BSc CS 3rd Year) SCC.311 Distributed Systems - Coursework
 
 This repository contains my attempt of a restful api consisting of a Client written in Javascript and a Python Backend Server. 
 
