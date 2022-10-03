@@ -1,8 +1,8 @@
 # SCC.311 Distributed Systems - Coursework
 
-This repository contains my attempt od a restful api consisting of a Client written in Javascript and a Python Server. 
+This repository contains my attempt of a restful api consisting of a Client written in Javascript and a Python Backend Server. 
 
-The API also contains a load balancer for traffic management and with a Redis in-memory Database.
+The API also contains a load balancer for traffic management and with a Redis in-memory Database/Cache.
 
 The CLI is fairly easy to use, mostly consisting of user input and real-time feedback based on user's choice.
 
